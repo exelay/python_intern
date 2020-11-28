@@ -1,0 +1,9 @@
+# Environment
+.venv/
+
+# IDE staff
+.idea/
+
+# Byte-compiled files
+*.pyc
+__pycache__/
