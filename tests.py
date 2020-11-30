@@ -1,8 +1,3 @@
-"""
-app tests example
-
-"""
-
 from app import is_alive_host
 
 
