@@ -7,3 +7,6 @@
 # Byte-compiled files
 *.pyc
 __pycache__/
+
+# Tests cache
+.pytest_cache
