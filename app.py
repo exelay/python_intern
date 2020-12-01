@@ -1,7 +1,6 @@
 import requests
 from fastapi import FastAPI
-from requests.exceptions import ConnectionError
-
+from requests.exceptions import ConnectionError, InvalidURL
 
 app = FastAPI()
 
@@ -18,8 +17,10 @@ def is_alive_host(hostname: str) -> bool:
     try:
         response = requests.get(url)
         status_code = response.status_code
-        if 100 <= status_code <= 400:
+        if 100 <= status_code < 400:
             return True
         return False
     except ConnectionError:
+        return False
+    except InvalidURL:
         return False
