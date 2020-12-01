@@ -7,5 +7,9 @@ app = FastAPI()
 
 @app.get("/healthz")
 async def healthz(hostname: str) -> dict:
+    """
+    Checks if the host is up or down.
+    :param hostname: The name of the host being checked.
+    """
     status = 'up' if is_alive_host(hostname) else 'down'
     return {'status': status}
